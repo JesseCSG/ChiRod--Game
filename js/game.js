@@ -19,7 +19,7 @@ var game = {
                 playerAttack: 1,
                 playerAttackTimer: 1000,
                 creepAttackTimer: 1000,            
-                playerMoveSpeed: 5,
+                playerMoveSpeed: 6,
                 creepMoveSpeed: 3,
                 gameTimerManager: "",
                 heroDeathManager: "",
@@ -42,9 +42,7 @@ var game = {
                 buyscreen: "",
                 buytext: "",
                 pausescreen: "",
-                pausetext: "",
-                minimap: "",
-                miniPlayer: ""
+                pausetext: ""
 	},
 	
 	
@@ -99,16 +97,14 @@ var game = {
                 me.pool.register("PauseManager", game.PauseManager);
             // loads throwable entities.
                 me.pool.register("spear", game.SpearThrow, true);
-            // loads mini map entities.
-                me.pool.register("minimap", game.MiniMap, true);
-                me.pool.register("miniplayer", game.MiniPlayerLocation, true);
-
             // creats\loads different game screens.
 		me.state.set(me.state.MENU, new game.TitleScreen());
 		me.state.set(me.state.PLAY, new game.PlayScreen());
                 me.state.set(me.state.SPENDEXP, new game.SpendExp());
                 me.state.set(me.state.NEW, new game.NewProfile());
                 me.state.set(me.state.LOAD, new game.LoadProfile());
+                me.state.set(me.state.CONTROLS, new game.ControlsScreen());
+
 
 
 		// Start the game.

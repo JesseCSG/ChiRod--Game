@@ -92,14 +92,15 @@ game.PlayerEntity = me.Entity.extend({
         } else if (me.input.isKeyPressed("left")) {
             // check for left movement.
             this.moveLeft();
+        } else if (me.input.isKeyPressed("up")) {
+            // check for up movement.
+            this.moveUp();
+        } else if (me.input.isKeyPressed("down")) {
+            // check for down movement.
+            this.moveDown();
         } else {
             // if no movement, no velocity.
             this.body.vel.x = 0;
-        }
-
-        if (me.input.isKeyPressed("jump")) {
-            // check if jumping.
-            this.jump();
         }
         // check if attacking.
         this.attacking = me.input.isKeyPressed("attack");
@@ -121,6 +122,24 @@ game.PlayerEntity = me.Entity.extend({
         this.body.vel.x -= this.body.accel.x * me.timer.tick;
         this.facing = "left";
         this.flipX(false);
+    },
+    
+    moveUp: function() {
+        //Sets the position of my x by the velocity defined above in
+        //setVelocity() and multiplying it by me.timer.tick.
+        //me.timer.tick makes the movement look smooth
+        this.body.vel.y -= this.body.accel.y * me.timer.tick;
+        this.facing = "up";
+        this.flipY(false);
+    },
+    
+    moveDown: function() {
+        //Sets the position of my x by the velocity defined above in
+        //setVelocity() and multiplying it by me.timer.tick.
+        //me.timer.tick makes the movement look smooth
+        this.body.vel.y += this.body.accel.y * me.timer.tick;
+        this.facing = "down";
+        this.flipY(false);
     },
     
     jump: function() {

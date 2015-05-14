@@ -57,7 +57,30 @@ game.TitleScreen = me.ScreenObject.extend({
                 // adds option 2 onto screen.
                 me.game.world.addChild(game.data.option2);
 
-        
+                game.data.option3 = new (me.Renderable.extend({
+                    init: function() {
+                        this._super(me.Renderable, 'init', [390, 440, 250, 50]);
+                        this.font = new me.Font('Times New Roman', 46, 'black');
+                        me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
+                    },
+                    // draws the following text.
+                    draw: function(renderer) {
+                        this.font.draw(renderer.getContext(), "Controls", this.pos.x, this.pos.y);
+                        
+                    },
+                    // returns updates as true.
+                    update: function(dt) {
+                        return true;
+                    },
+                    // if new game is pressed, then change screen NEW.
+                    newGame: function() {
+                        me.input.releasePointerEvent('pointerdown', this);
+                        me.input.releasePointerEvent('pointerdown', game.data.option3);
+                        me.state.change(me.state.LOAD);
+                    }
+                }));
+                // adds option 2 onto screen.
+                me.game.world.addChild(game.data.option3);
         },
 	/**	
 	 *  action to perform when leaving this screen (state change)

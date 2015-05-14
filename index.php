@@ -3,7 +3,7 @@
 ?>
 <html>
 	<head>
-		<title>melonJS Template</title>
+		<title>Chi-Rod_The Forest</title>
 		<link rel="stylesheet" type="text/css" media="screen" href="index.css">
 		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,7 +55,6 @@
                 <script type="text/javascript" src="js/entities/EnemyCreep.js"></script>
                 <script type="text/javascript" src="js/entities/PlayerCreep.js"></script>
                 <script type="text/javascript" src="js/entities/SpearThrow.js"></script>
-                <script type="text/javascript" src="js/entities/MiniMap.js"></script>
                 <!-- Inputs all game managers pages for use. -->
                 <script type="text/javascript" src="js/gamemanagers/GameManager.js"></script>
                 <script type="text/javascript" src="js/gamemanagers/GameTimerManager.js"></script>
@@ -65,9 +64,6 @@
 
                 <!-- Inputs all entities entities for use. -->
                 <script type="text/javascript" src="js/entities/SpearThrow.js"></script>
-                <script type="text/javascript" src="js/entities/MiniMap.js"></script>
-                <script type="text/javascript" src="js/entities/MiniPlayerLocation.js"></script>
-
 		<script type="text/javascript" src="js/entities/HUD.js"></script>
                 <!-- Inputs screens pages for use. -->
 		<script type="text/javascript" src="js/screens/title.js"></script>
@@ -75,6 +71,7 @@
                 <script type="text/javascript" src="js/screens/loadProfile.js"></script>
                 <script type="text/javascript" src="js/screens/newProfile.js"></script>
                 <script type="text/javascript" src="js/screens/spendExp.js"></script>
+                <script type="text/javascript" src="js/screens/ControlsScreen.js"></script>
 		<!-- /build -->
 		<!-- Bootstrap & Mobile optimization tricks -->
 		<script type="text/javascript">

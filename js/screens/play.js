@@ -25,10 +25,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 // resets Pause Manager.
                 var pauseManager = me.pool.pull("PauseManager", 0, 0, {});
                 me.game.world.addChild(pauseManager, 0);
-                // resets minimap entity.
-                game.data.minimap = me.pool.pull("minimap", 10, 10, {});
-                me.game.world.addChild(game.data.minimap, 30);
-            
+                            
                 //resets selection keys.
                 me.input.bindKey(me.input.KEY.B, "buy");                               
                 me.input.bindKey(me.input.KEY.S, "skill1");
@@ -39,7 +36,8 @@ game.PlayScreen = me.ScreenObject.extend({
                 //resets movement keys.
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 me.input.bindKey(me.input.KEY.LEFT, "left");
-                me.input.bindKey(me.input.KEY.SPACE, "jump");
+                me.input.bindKey(me.input.KEY.UP, "up");
+                me.input.bindKey(me.input.KEY.DOWN, "down");
                 me.input.bindKey(me.input.KEY.A, "attack");
 
 		// add our HUD to the game world
@@ -56,12 +54,14 @@ game.PlayScreen = me.ScreenObject.extend({
 		me.game.world.removeChild(this.HUD);
 	},
         
+        
+        
+        
+        
+        
         resetPlayer: function(x, y) {
             // on reset, reset player location.
             game.data.player = me.pool.pull("player", x, y, {});
-                me.game.world.addChild(game.data.player, 10);
-            // on reset, reset mini player location.
-            game.data.miniPlayer = me.pool.pull("miniplayer", x, y, {});
-                me.game.world.addChild(game.data.miniPlayer, 31);
+                me.game.world.addChild(game.data.player, 10);            
         }
 });
